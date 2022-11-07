@@ -37,6 +37,6 @@
       "eslint --fix",
       "prettier -w -u"
     ],
-    "!**/*.{js,ts,jsx,tsx}": "prettier -w -u"
+    "!*.{js,ts,jsx,tsx}": "prettier -w -u"
   }
 }
