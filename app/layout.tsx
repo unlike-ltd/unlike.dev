@@ -1,5 +1,6 @@
 import './globals.css'
 import { Righteous } from '@next/font/google'
+import { AnalyticsWrapper } from './components/analytics'
 
 const righteous = Righteous({
   weight: '400',
@@ -19,7 +20,10 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className="bg-white dark:bg-black dark:text-white">{children}</body>
+      <body className="bg-white dark:bg-black dark:text-white">
+        {children}
+        <AnalyticsWrapper />
+      </body>
     </html>
   )
 }
