@@ -1,6 +1,4 @@
-import { NextPage } from 'next'
-
-const Home: NextPage = () => {
+export default function Page(): JSX.Element {
   return (
     <div className="px-8 font-mono">
       <main className="flex min-h-screen flex-1 flex-col items-center justify-center px-16">
@@ -17,5 +15,3 @@ const Home: NextPage = () => {
     </div>
   )
 }
-
-export default Home
