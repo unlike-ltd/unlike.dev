@@ -12,6 +12,12 @@
       "rules": {
         "@typescript-eslint/explicit-function-return-type": ["error"]
       }
+    },
+    {
+      "files": ["*.config.js"],
+      "rules": {
+        "unicorn/prefer-module": "off"
+      }
     }
   ],
   "rules": {
