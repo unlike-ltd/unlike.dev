@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "icons": "rm -rf ./components/icons/**/*.{tsx,ts} && npx @svgr/cli --typescript --icon --jsx-runtime automatic --no-index --out-dir components/icons -- _assets/icons"
   },
   "dependencies": {
     "@next/font": "13.0.2",
@@ -23,6 +24,7 @@
     "typescript": "4.8.4"
   },
   "devDependencies": {
+    "@svgr/cli": "6.5.1",
     "@typescript-eslint/eslint-plugin": "5.42.1",
     "autoprefixer": "10.4.13",
     "eslint-config-prettier": "8.5.0",
