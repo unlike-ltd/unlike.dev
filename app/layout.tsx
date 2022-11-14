@@ -1,5 +1,6 @@
 import './globals.css'
 import { Righteous } from '@next/font/google'
+import Script from 'next/script'
 import { AnalyticsWrapper } from './components/analytics'
 
 const righteous = Righteous({
@@ -24,6 +25,11 @@ export default function RootLayout({
         {children}
         <AnalyticsWrapper />
       </body>
+      <Script
+        defer
+        src="https://static.cloudflareinsights.com/beacon.min.js"
+        data-cf-beacon='{"token": "46e779db1e7c43b3b15fa1204f1e3b2f"}'
+      />
     </html>
   )
 }
