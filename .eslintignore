@@ -14,3 +14,4 @@ package-lock.json
 next-env.d.ts
 
 /components/icons/
+/components/svgs/

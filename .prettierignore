@@ -12,3 +12,6 @@ package-lock.json
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+/components/icons/
+/components/svgs/
