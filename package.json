@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "icons": "rm -rf ./components/icons/**/*.{tsx,ts} && npx @svgr/cli --typescript --icon --jsx-runtime automatic --no-index --out-dir components/icons -- _assets/icons"
+    "icons": "rm -rf ./components/icons/**/*.{tsx,ts} && npx @svgr/cli --typescript --icon --jsx-runtime automatic --no-index --out-dir components/icons -- _assets/icons",
+    "svgs": "rm -rf ./components/svgs/**/*.{tsx,ts} && npx @svgr/cli --typescript  --icon '100%' --jsx-runtime automatic --no-index --out-dir components/svgs -- _assets/svgs"
   },
   "dependencies": {
     "@next/font": "13.0.3",

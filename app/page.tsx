@@ -1,5 +1,43 @@
+import { SVGProps } from 'react'
+
 import SvgLinkedin from '../components/icons/social/Linkedin'
 import SvgSquareGithub from '../components/icons/social/SquareGithub'
+import SvgClientPave from '../components/svgs/logos/ClientPave'
+import SvgClientPhantom from '../components/svgs/logos/ClientPhantom'
+import SvgClientScienceIo from '../components/svgs/logos/ClientScienceIo'
+import SvgClientTari from '../components/svgs/logos/ClientTari'
+
+const CLIENTS: ReadonlyArray<{
+  id: string
+  Component: (props: SVGProps<SVGSVGElement>) => JSX.Element
+  href: string
+  title: string
+}> = [
+  {
+    id: 'phantom',
+    Component: SvgClientPhantom,
+    href: 'https://phantom.land',
+    title: 'Phantom | Creative Agency',
+  },
+  {
+    id: 'pave',
+    Component: SvgClientPave,
+    href: 'https://pave.team/',
+    title: 'Pave | Interim design & recruiting team.',
+  },
+  {
+    id: 'scienceio',
+    Component: SvgClientScienceIo,
+    href: 'https://science.io/',
+    title: 'ScienceIO | Unlock the power of untapped healthcare data',
+  },
+  {
+    id: 'tari',
+    Component: SvgClientTari,
+    href: 'https://tari.com/',
+    title: 'Tari | The protocol for digital assets',
+  },
+]
 
 export default function Page(): JSX.Element {
   return (
@@ -37,6 +75,33 @@ export default function Page(): JSX.Element {
             />
           </a>
         </div>
+        <section className="my-20 w-full">
+          <h2 id="clients" className="mb-2 text-center text-xl font-normal">
+            Clients
+          </h2>
+          <ul
+            aria-labelledby="clients"
+            className="flex flex-row flex-wrap items-center justify-center gap-2"
+          >
+            {CLIENTS.map(({ Component, id, href, title }, index) => (
+              <li
+                className="flex h-[12.5rem] w-[12.5rem] shrink-0 items-center justify-center"
+                key={id}
+              >
+                <a
+                  href={href}
+                  aria-label={title}
+                  title={title}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="select-none fill-black transition-all duration-300 ease-linear hover:bg-black hover:fill-white focus-visible:bg-black focus-visible:fill-white dark:fill-white dark:hover:bg-white dark:hover:fill-black dark:focus-visible:bg-white dark:focus-visible:fill-black"
+                >
+                  <Component aria-hidden />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
       </main>
       <footer className="flex flex-1 items-center justify-center py-8 text-center text-sm text-gray-500">
         Unlike Ltd is a company registered in England and Wales (No. 14026435).

@@ -1,6 +1,8 @@
 import './globals.css'
+
 import { Righteous } from '@next/font/google'
 import Script from 'next/script'
+
 import { AnalyticsWrapper } from './components/analytics'
 
 const righteous = Righteous({
