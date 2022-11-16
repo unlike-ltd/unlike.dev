@@ -20,6 +20,12 @@ const CLIENTS: ReadonlyArray<{
     title: 'Phantom | Creative Agency',
   },
   {
+    id: 'tari',
+    Component: SvgClientTari,
+    href: 'https://tari.com/',
+    title: 'Tari | The protocol for digital assets',
+  },
+  {
     id: 'pave',
     Component: SvgClientPave,
     href: 'https://pave.team/',
@@ -30,12 +36,6 @@ const CLIENTS: ReadonlyArray<{
     Component: SvgClientScienceIo,
     href: 'https://science.io/',
     title: 'ScienceIO | Unlock the power of untapped healthcare data',
-  },
-  {
-    id: 'tari',
-    Component: SvgClientTari,
-    href: 'https://tari.com/',
-    title: 'Tari | The protocol for digital assets',
   },
 ]
 
