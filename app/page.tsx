@@ -47,8 +47,8 @@ export default function Page(): JSX.Element {
           Unlike
         </h1>
         <p>hi@unlike.dev</p>
-        <p>Unlike others. Software development.</p>
-        <p>React + TypeScript + GraphQL = 😍</p>
+        <p className="text-center">Unlike others. Software development.</p>
+        <p className="text-center">React + TypeScript + GraphQL = 😍</p>
         <div className="flex gap-2">
           <a
             aria-label="LinkedIn"
