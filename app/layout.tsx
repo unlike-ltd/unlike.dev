@@ -22,11 +22,13 @@ export default function RootLayout({
       */}
       <head />
       <body className="bg-white dark:bg-black dark:text-white">{children}</body>
-      <Script
-        defer
-        src="https://static.cloudflareinsights.com/beacon.min.js"
-        data-cf-beacon='{"token": "46e779db1e7c43b3b15fa1204f1e3b2f"}'
-      />
+      {process.env.NODE_ENV === 'production' ? (
+        <Script
+          defer
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          data-cf-beacon='{"token": "46e779db1e7c43b3b15fa1204f1e3b2f"}'
+        />
+      ) : undefined}
     </html>
   )
 }
