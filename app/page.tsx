@@ -42,8 +42,8 @@ const CLIENTS: ReadonlyArray<{
 export default function Page(): JSX.Element {
   return (
     <div className="px-8 font-mono">
-      <main className="flex min-h-screen flex-1 flex-col items-center justify-center gap-2 px-16">
-        <h1 className="font-brand text-9xl font-normal tracking-tighter">
+      <main className="flex min-h-screen flex-1 flex-col items-center justify-center gap-2 sm:mx-16">
+        <h1 className="font-brand text-7xl font-normal tracking-tighter sm:text-9xl">
           Unlike
         </h1>
         <p>hi@unlike.dev</p>
@@ -81,11 +81,11 @@ export default function Page(): JSX.Element {
           </h2>
           <ul
             aria-labelledby="clients"
-            className="flex flex-row flex-wrap items-center justify-center gap-2"
+            className=" flex w-full flex-row flex-wrap items-center justify-center gap-2"
           >
             {CLIENTS.map(({ Component, id, href, title }, index) => (
               <li
-                className="flex h-[12.5rem] w-[12.5rem] shrink-0 items-center justify-center"
+                className="  flex aspect-square shrink-0 basis-1/2 items-center justify-center  sm:mx-0 sm:basis-48"
                 key={id}
               >
                 <a
