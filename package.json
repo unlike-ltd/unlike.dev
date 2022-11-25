@@ -10,8 +10,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "format": "npx prettier -w .",
-    "icons": "rm -rf ./src/assets/icons && svgo --config svgo.icons.config.cjs -r -f ./_assets/icons -o ./src/assets/icons",
-    "svgs": "rm -rf ./src/assets/svgs && svgo --config svgo.config.cjs -r -f ./_assets/svgs -o ./src/assets/svgs"
+    "icons": "svgo --config svgo.icons.config.cjs -r -f ./src/assets/icons -o ./src/assets/icons",
+    "svgs": "svgo --config svgo.config.cjs -r -f ./src/assets/svgs -o ./src/assets/svgs"
   },
   "dependencies": {
     "@astrojs/sitemap": "1.0.0",
