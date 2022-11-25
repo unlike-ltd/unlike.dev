@@ -10,6 +10,3 @@ package-lock.json
 # typescript
 *.tsbuildinfo
 env.d.ts
-
-/components/icons/
-/components/svgs/
