@@ -1,9 +1,7 @@
 # dependencies
-/node_modules
+/node_modules/
 
-# next.js
-/.next/
-/out/
+/dist/
 /public/
 
 package.json
@@ -11,7 +9,7 @@ package-lock.json
 
 # typescript
 *.tsbuildinfo
-next-env.d.ts
+env.d.ts
 
 /components/icons/
 /components/svgs/

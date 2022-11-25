@@ -1,0 +1,124 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+import Footer from '../components/Footer.astro'
+
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config'
+
+import svgLinkedin from '../assets/icons/social/linkedin.svg?raw'
+import svgSquareGithub from '../assets/icons/social/square-github.svg?raw'
+import svgClientPave from '../assets/svgs/logos/client-pave.svg?raw'
+import svgClientPhantom from '../assets/svgs/logos/client-phantom.svg?raw'
+import svgClientScienceIo from '../assets/svgs/logos/client-science-io.svg?raw'
+import svgClientTari from '../assets/svgs/logos/client-tari.svg?raw'
+
+const SOCIAL: ReadonlyArray<{
+  id: string
+  svgRaw: string
+  href: string
+  title: string
+}> = [
+  {
+    id: 'linkedin',
+    svgRaw: svgLinkedin,
+    href: 'https://www.linkedin.com/company/unlike-ltd/',
+    title: 'LinkedIn',
+  },
+  {
+    id: 'github',
+    svgRaw: svgSquareGithub,
+    href: 'https://github.com/unlike-ltd',
+    title: 'GitHub',
+  },
+]
+
+const CLIENTS: ReadonlyArray<{
+  id: string
+  svgRaw: string
+  href: string
+  title: string
+}> = [
+  {
+    id: 'phantom',
+    svgRaw: svgClientPhantom,
+    href: 'https://phantom.land',
+    title: 'Phantom | Creative Agency',
+  },
+  {
+    id: 'tari',
+    svgRaw: svgClientTari,
+    href: 'https://tari.com/',
+    title: 'Tari | The protocol for digital assets',
+  },
+  {
+    id: 'pave',
+    svgRaw: svgClientPave,
+    href: 'https://pave.team/',
+    title: 'Pave | Interim design & recruiting team.',
+  },
+  {
+    id: 'scienceio',
+    svgRaw: svgClientScienceIo,
+    href: 'https://science.io/',
+    title: 'ScienceIO | Unlock the power of untapped healthcare data',
+  },
+]
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body class="bg-white px-8 font-mono dark:bg-black dark:text-white">
+    <main
+      class="flex min-h-screen flex-1 flex-col items-center justify-center gap-2 sm:mx-16"
+    >
+      <h1 class="font-brand text-7xl font-normal tracking-tighter sm:text-9xl">
+        Unlike
+      </h1>
+      <p>hi@unlike.dev</p>
+      <p class="text-center">Unlike others. Software development.</p>
+      <div class="flex gap-2">
+        {
+          SOCIAL.map(({ title, href, svgRaw }) => (
+            <a
+              aria-label={title}
+              title={title}
+              href={href}
+              rel="noreferrer"
+              class="select-none fill-black text-4xl transition-[fill] duration-300 ease-linear hover:fill-gray-600 focus-visible:fill-gray-600 dark:fill-white dark:hover:fill-gray-400 dark:focus-visible:fill-gray-400"
+            >
+              <Fragment set:html={svgRaw} />
+            </a>
+          ))
+        }
+      </div>
+      <section class="my-20 w-full">
+        <h2 id="clients" class="mb-2 text-center text-xl font-normal">
+          Clients
+        </h2>
+        <ul
+          aria-labelledby="clients"
+          class="flex w-full flex-row flex-wrap items-center justify-center gap-2"
+        >
+          {
+            CLIENTS.map(({ svgRaw, id, href, title }) => (
+              <li class="flex aspect-square shrink-0 basis-1/2 items-center justify-center sm:mx-0 sm:basis-48">
+                <a
+                  href={href}
+                  aria-label={title}
+                  title={title}
+                  rel="noreferrer"
+                  class="h-full w-full select-none fill-black transition-[fill,background] duration-300 ease-linear hover:bg-black hover:fill-white focus-visible:bg-black focus-visible:fill-white dark:fill-white dark:hover:bg-white dark:hover:fill-black dark:focus-visible:bg-white dark:focus-visible:fill-black"
+                >
+                  <Fragment set:html={svgRaw} />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
