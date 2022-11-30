@@ -1,0 +1,21 @@
+---
+import BaseHead from '../components/BaseHead.astro'
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={`Not Found`} />
+  </head>
+
+  <body>
+    <main class="grid h-screen place-items-center">
+      <article class="text-center">
+        <h2 class="m-0 text-center text-4xl sm:text-5xl">404</h2>
+        <a
+          class="underline hover:no-underline focus-visible:no-underline"
+          href={Astro.site}>Take me home.</a
+        >
+      </article>
+    </main>
+  </body>
+</html>
