@@ -1,0 +1,62 @@
+---
+const TECH: ReadonlyArray<{ title: string; href?: string }> = [
+  {
+    title: 'JavaScript',
+    href: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+  },
+  { title: 'TypeScript', href: 'https://www.typescriptlang.org' },
+  { title: 'Node.js', href: 'https://nodejs.org' },
+  { title: 'Next.js', href: 'https://nextjs.org' },
+  { title: 'React', href: 'https://reactjs.org' },
+  { title: 'React Query', href: 'https://react-query-v3.tanstack.com' },
+  { title: 'Apollo', href: 'https://www.apollographql.com' },
+  { title: 'Redux', href: 'https://redux.js.org' },
+  { title: 'Tailwind CSS', href: 'https://tailwindcss.com' },
+  { title: 'Styled Components', href: 'https://styled-components.com' },
+  { title: 'Storybook', href: 'https://storybook.js.org' },
+  { title: 'GraphQL', href: 'https://graphql.org' },
+  {
+    title: 'REST',
+    href: 'https://developer.mozilla.org/en-US/docs/Glossary/REST',
+  },
+  { title: 'Jest', href: 'https://jestjs.io' },
+  { title: 'Playwright', href: 'https://playwright.dev' },
+  { title: 'Git', href: 'https://git-scm.com' },
+  { title: 'GitHub', href: 'https://github.com' },
+  { title: 'GitHub Actions', href: 'https://github.com/features/actions' },
+  { title: 'NPM', href: 'https://www.npmjs.com' },
+  { title: 'HTML', href: 'https://developer.mozilla.org/en-US/docs/Web/HTML' },
+  { title: 'CSS', href: 'https://developer.mozilla.org/en-US/docs/Web/CSS' },
+  { title: 'ESLint', href: 'https://eslint.org' },
+  { title: 'GraphQL CodeGen', href: 'https://the-guild.dev/graphql/codegen' },
+  { title: 'Mock Service Worker', href: 'https://mswjs.io/' },
+]
+---
+
+<section class="mb-20 w-full max-w-7xl">
+  <h2 id="tech" class="mb-5 text-center text-xl font-normal">
+    <a href="#tech">Technology</a>
+  </h2>
+  <ul
+    aria-labelledby="tech"
+    class="flex flex-wrap items-center justify-center text-lg [&>li]:inline-flex [&>li]:after:mx-2 [&>li]:after:content-['•'] [&>li:last-child]:after:hidden"
+  >
+    {
+      TECH.map((item) =>
+        item.href ? (
+          <li>
+            <a
+              class="underline decoration-transparent decoration-2 underline-offset-4 transition-[text-decoration-color] duration-150 ease-linear hover:decoration-current focus-visible:decoration-current"
+              href={item.href}
+              rel="noopener noreferrer"
+            >
+              {item.title}
+            </a>
+          </li>
+        ) : (
+          <li>{item.title}</li>
+        )
+      )
+    }
+  </ul>
+</section>

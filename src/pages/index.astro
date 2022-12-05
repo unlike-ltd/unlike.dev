@@ -1,6 +1,7 @@
 ---
 import BaseHead from '../components/BaseHead.astro'
 import Footer from '../components/Footer.astro'
+import Technology from '../components/Technology.astro'
 
 import svgLinkedin from '../assets/icons/social/linkedin.svg?raw'
 import svgSquareGithub from '../assets/icons/social/square-github.svg?raw'
@@ -8,6 +9,8 @@ import svgClientPave from '../assets/svgs/logos/client-pave.svg?raw'
 import svgClientPhantom from '../assets/svgs/logos/client-phantom.svg?raw'
 import svgClientScienceIo from '../assets/svgs/logos/client-science-io.svg?raw'
 import svgClientTari from '../assets/svgs/logos/client-tari.svg?raw'
+
+import { SITE_TITLE, SITE_DESCRIPTION } from '../config'
 
 const SOCIAL: ReadonlyArray<{
   id: string
@@ -71,32 +74,38 @@ const CLIENTS: ReadonlyArray<{
     <main
       class="flex min-h-screen flex-1 flex-col items-center justify-center gap-2 sm:mx-16"
     >
-      <h1 class="font-brand text-7xl font-normal tracking-tighter sm:text-9xl">
-        Unlike
-      </h1>
-      <a
-        class="underline decoration-transparent transition-[text-decoration-color] duration-150 ease-linear hover:decoration-current focus-visible:decoration-current"
-        href="mailto:hi@unlike.dev">hi@unlike.dev</a
+      <header
+        class="mb-20 flex w-full flex-col items-center justify-center gap-2"
       >
-      <p class="text-center">Unlike others. Software development.</p>
-      <div class="flex gap-2">
-        {
-          SOCIAL.map(({ title, href, svgRaw }) => (
-            <a
-              aria-label={title}
-              title={title}
-              href={href}
-              rel="noreferrer"
-              class="select-none fill-black text-4xl transition-[fill] duration-300 ease-linear hover:fill-gray-600 focus-visible:fill-gray-600 dark:fill-white dark:hover:fill-gray-400 dark:focus-visible:fill-gray-400"
-            >
-              <Fragment set:html={svgRaw} />
-            </a>
-          ))
-        }
-      </div>
-      <section class="my-20 w-full">
+        <h1
+          class="font-brand text-7xl font-normal tracking-tighter sm:text-9xl"
+        >
+          {SITE_TITLE}
+        </h1>
+        <p class="text-center">{SITE_DESCRIPTION}</p>
+        <a
+          class="underline underline-offset-4 transition-[text-decoration-color] duration-150 ease-linear hover:decoration-transparent focus-visible:decoration-transparent"
+          href="mailto:hi@unlike.dev">hi@unlike.dev</a
+        >
+        <div class="flex gap-2">
+          {
+            SOCIAL.map(({ title, href, svgRaw }) => (
+              <a
+                aria-label={title}
+                title={title}
+                href={href}
+                rel="noreferrer"
+                class="select-none fill-black text-4xl transition-[fill] duration-300 ease-linear hover:fill-gray-600 focus-visible:fill-gray-600 dark:fill-white dark:hover:fill-gray-400 dark:focus-visible:fill-gray-400"
+              >
+                <Fragment set:html={svgRaw} />
+              </a>
+            ))
+          }
+        </div>
+      </header>
+      <section class="mb-20 w-full">
         <h2 id="clients" class="mb-2 text-center text-xl font-normal">
-          Clients
+          <a href="#clients">Clients</a>
         </h2>
         <ul
           aria-labelledby="clients"
@@ -119,6 +128,7 @@ const CLIENTS: ReadonlyArray<{
           }
         </ul>
       </section>
+      <Technology />
     </main>
     <Footer />
   </body>
