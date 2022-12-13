@@ -21,7 +21,7 @@
     "tailwindcss": "3.2.4"
   },
   "devDependencies": {
-    "prettier": "2.8.0",
+    "prettier": "2.8.1",
     "prettier-plugin-astro": "0.7.0",
     "prettier-plugin-tailwindcss": "0.2.0",
     "svgo": "3.0.2"
