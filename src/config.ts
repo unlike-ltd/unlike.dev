@@ -2,4 +2,4 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = 'Unlike'
-export const SITE_DESCRIPTION = 'Web development.'
+export const SITE_DESCRIPTION = 'Website & Application engineering in London'

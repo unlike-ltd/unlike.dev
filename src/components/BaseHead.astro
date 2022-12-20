@@ -4,16 +4,18 @@
 import '@fontsource/righteous'
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config'
 
-export interface Props {
-  title?: string
-  description?: string
-  image?: string
-}
+type Props = Partial<{
+  title: string
+  description: string
+  image: string
+}>
 
 const { title, description, image = '/placeholder-social.jpg' } = Astro.props
 
-const TITLE = title ? `${title} - ${SITE_TITLE} ` : SITE_TITLE
-const DESC = description || SITE_DESCRIPTION
+const TITLE: `${string} | ${typeof SITE_TITLE}` = title
+  ? `${title} | ${SITE_TITLE}`
+  : `${SITE_DESCRIPTION} | ${SITE_TITLE}`
+const DESC: string | typeof SITE_DESCRIPTION = description || SITE_DESCRIPTION
 ---
 
 <meta charset="utf-8" />
