@@ -115,6 +115,9 @@ const CLIENTS: ReadonlyArray<{
                   class="h-full w-full select-none fill-black transition-[fill,background] duration-300 ease-linear hover:bg-black hover:fill-white focus-visible:bg-black focus-visible:fill-white dark:fill-white dark:hover:bg-white dark:hover:fill-black dark:focus-visible:bg-white dark:focus-visible:fill-black"
                 >
                   <Fragment set:html={svgRaw} />
+                  <span aria-hidden="true" class="sr-only">
+                    {title}
+                  </span>
                 </a>
               </li>
             ))
